@@ -32,9 +32,15 @@ struct instruct insts[] = {
     { "SUB", 3, DGN_MATH, 0b1000010100000000, CPU_BASE, 0 },
     { "ADD", 3, DGN_MATH, 0b1000011000000000, CPU_BASE, 0 },
     { "AND", 3, DGN_MATH, 0b1000011100000000, CPU_BASE, 0 },
+    { "ANC', 3, DGN_MATH, 0b1000000110001000, CPU_ECLIPSE, 0},
     { "XOR", 3, DGN_MATH, 0b1010011111111000, CPU_ECLIPSE, 0},
-    
-    // Arithmetic & Logic skip conditions (7)
+    { "BTZ", 3, DGN_MATH, Ob1000010001001000, CPU_ECLIPSE, 0},
+    { "BTO", 3, DGN_MATH, 0b1000010000001000, CPU_ECLIPSE, 0},
+    { "CLM", 3, DGN_MATH, 0b1000010011111000, CPU_ECLIPSE, 0},
+    //Block Instructions   
+    { "BAM", 3, DGN_MATH, 0b1001011111001000, CPU_ECLIPSE, 0},
+    { "BLM", 3, DGN_MATH, 0b1001011111001000, CPU_ECLIPSE, 0},    
+// Arithmetic & Logic skip conditions (7)
     { "SKP", 3, DGN_SKPC, 01, CPU_BASE, 0 },
     { "SZC", 3, DGN_SKPC, 02, CPU_BASE, 0 },
     { "SNC", 3, DGN_SKPC, 03, CPU_BASE, 0 },
