@@ -21,8 +21,8 @@ struct instruct insts[] = {
     { "DSZ", 3, DGN_FLOW, 0b0001100000000000, CPU_BASE, 0 },
     // Memory access instructions (2)
     { "LDA", 3, DGN_LOAD, 0b0010000000000000, CPU_BASE, 0 },
-    { "LEF", 3, DGN_LOAD, 0b0110000000000000, CPU_ECLIPSE, 0},
     { "STA", 3, DGN_LOAD, 0b0100000000000000, CPU_BASE, 0 },
+    { "LEF", 3, DGN_LOAD, 0b0110000000000000, CPU_ECLIPSE, 0},
     // Arithmetic & Logic instructions (8)
     { "COM", 3, DGN_MATH, 0b1000000000000000, CPU_BASE, 0 },
     { "NEG", 3, DGN_MATH, 0b1000000100000000, CPU_BASE, 0 },
@@ -32,14 +32,23 @@ struct instruct insts[] = {
     { "SUB", 3, DGN_MATH, 0b1000010100000000, CPU_BASE, 0 },
     { "ADD", 3, DGN_MATH, 0b1000011000000000, CPU_BASE, 0 },
     { "AND", 3, DGN_MATH, 0b1000011100000000, CPU_BASE, 0 },
+    //Extended Eclipse Instructions 
     { "ANC', 3, DGN_MATH, 0b1000000110001000, CPU_ECLIPSE, 0},
     { "XOR", 3, DGN_MATH, 0b1010011111111000, CPU_ECLIPSE, 0},
-    { "BTZ", 3, DGN_MATH, Ob1000010001001000, CPU_ECLIPSE, 0},
+    { "BTZ", 3, DGN_MATH, 0b1000010001001000, CPU_ECLIPSE, 0},
     { "BTO", 3, DGN_MATH, 0b1000010000001000, CPU_ECLIPSE, 0},
-    { "CLM", 3, DGN_MATH, 0b1000010011111000, CPU_ECLIPSE, 0},
+    { "COB", 3, DGN_MATH, 0b1000010110001000, CPU_ECLIPSE, 0}, 
+    { "LOB", 3, DGN_MATH, 0b1000010110001000, CPU_ECLIPSE, 0}, 
+    //Decimal instructions 
+    { "DAD", 3, DGN_MATH, 0b1000000010001000, CPU_ECLIPSE, 0}, 
+    { "DSB", 3, DGN_MATH, 0b1000000011001000, CPU_ECLIPSE, 0),
+
+    //Char instructions    
+
     //Block Instructions   
     { "BAM", 3, DGN_MATH, 0b1001011111001000, CPU_ECLIPSE, 0},
     { "BLM", 3, DGN_MATH, 0b1001011111001000, CPU_ECLIPSE, 0},    
+    { "CLM", 3, DGN_MATH, 0b1000010011111000, CPU_ECLIPSE, 0},
 // Arithmetic & Logic skip conditions (7)
     { "SKP", 3, DGN_SKPC, 01, CPU_BASE, 0 },
     { "SZC", 3, DGN_SKPC, 02, CPU_BASE, 0 },
@@ -50,7 +59,7 @@ struct instruct insts[] = {
     { "SBN", 3, DGN_SKPC, 07, CPU_BASE, 0 },
     // Trap instruction (Arithmetic no-op) (1)
     { "TRAP", 4, DGN_TRAP, 0b1000000000001000, CPU_NOVA3 | CPU_NOVA4 | CPU_ECLIPSE | CPU_F9445 | CPU_NOEMU, 0 },
-    // Byte acess instructions (2)
+    // Byte acCess instructions (2)
     { "LDB", 3, DGN_CTAA, 0b0110000100000001, CPU_NOVA4 | CPU_ECLIPSE | CPU_F9445, 11 },
     { "STB", 3, DGN_CTAA, 0b0110010000000001, CPU_NOVA4 | CPU_ECLIPSE | CPU_F9445, 12 },
     // Stack instructions (10)
