@@ -171,6 +171,7 @@ int16_t main( int16_t argc, int8_t ** argv )
                     case '3': btarget = CPU_NOVA3; break;
                     case '4': btarget = CPU_NOVA4; break;
                     case '5': btarget = CPU_F9445; break;
+					case '6': btarget = CPU_ECLIPSE; break; 
                 }
 
                 break;
